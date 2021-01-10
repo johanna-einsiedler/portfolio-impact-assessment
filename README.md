@@ -5,9 +5,10 @@ created by Johanna Einsieder & Fabian Dietrich at the AustrianStartups Hackathon
 
 Our project tries to solve the problem of how to do good (or at least not bad) when investing while at the same time achieving high profits. Why does it always have to be a trade-off — can't we get both? For this, we pull price data of companies from Yahoo Finance to compute their risk-return ratios and their ESG scores. We plot these data in a 3-dimensional matrix to find the efficiency frontier of volatility, returns, and sustainability. 
 
-Good companies are all on this frontier. Depending on our individual preferences for different amounts of sustainability, profit, or risk, we can make rational decisions on how our portfolio should be composed. The following pictures show the efficiency frontier with example portfolios:
+Good companies are all on this frontier. Depending on our individual preferences for different amounts of sustainability, profit, or risk, we can make rational decisions on how our portfolio should be composed. The following pictures show the efficiency frontier with example portfolios (high values on the x and y axis indicate a high (good) sharp ratio, high (yellow) values on the ESG color axis indicate a bad sustainability score):
 
-![2D-Plot with color-coded ESG score  (high values on the x and y axis indicate a high (good) sharp ratio, high (yellow) values on the ESG color axis indicate a bad sustainability score)](https://github.com/Fabius42/portfolio-impact-assessment/imgs/image/2D_Plot.png?raw=true)
+![2D-Plot with color-coded ESG score](imgs/2D_Plot.png)
+ 
 
 ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c392b4dc-f2d0-4921-9757-da61f3d51a78/2D_Plot.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c392b4dc-f2d0-4921-9757-da61f3d51a78/2D_Plot.png)
 
