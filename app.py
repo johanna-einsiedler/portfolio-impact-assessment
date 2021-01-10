@@ -25,10 +25,10 @@ external_stylesheets = [
 app = dash.Dash(__name__, external_stylesheets = external_stylesheets)
 
 # import ticks
-tick_list = pd.read_csv('C:/Users/hicom/Documents/Side Projects/AS_hackathon_8.1/companylist.csv')
+tick_list = pd.read_csv('C:/Users/hicom/Documents/Side Projects/AS_hackathon_8.1/esg-scores.csv')
 
 # get tick list for dropdown
-available_stocks = tick_list['Name'].unique()
+available_stocks = tick_list['tick'].unique()
 
 
 def calculate_frontier(ticks):
@@ -44,7 +44,7 @@ def calculate_frontier(ticks):
     
     assets = pd.concat([ind_er, ann_sd], axis=1) # Creating a table for visualising returns and volatility of assets
     assets.columns = ['Returns', 'Volatility']
-    assets['ESG'] = np.random.randint(0,50,size = assets.shape[0])
+    assets['ESG'] = list(tick_list[tick_list.tick.isin(ticks)].esg)
     
     p_ret = [] # Define an empty array for portfolio returns
     p_vol = [] # Define an empty array for portfolio volatility
@@ -52,7 +52,7 @@ def calculate_frontier(ticks):
     p_esg = []
     
     num_assets = len(df.columns)
-    num_portfolios = 1000
+    num_portfolios = 10
     
     cov_matrix = df.pct_change().apply(lambda x: np.log(1+x)).cov()
     
@@ -131,8 +131,7 @@ app.layout = html.Div(children = [
 def update_scatter(stock_drop):
     
     # get ticks for selected companies
-    ticks = list(tick_list[tick_list.Name.isin(stock_drop)].Symbol)
-
+    ticks = stock_drop
     dff = calculate_frontier(ticks)
     rf = 0.01
     idx_sharp = ((dff['Returns']-rf)/dff['Volatility']).idxmax()
