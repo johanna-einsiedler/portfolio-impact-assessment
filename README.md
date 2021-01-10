@@ -13,9 +13,11 @@ Good companies are all on this frontier. Depending on our individual preferences
 2D-Plot with color-coded ESG score (high values on the x and y axis indicate a high (good) sharp ratio, high (yellow) values on the ESG color axis indicate a bad sustainability score)
 
 
-![](imgs/3D_Plot.png)
+![](imgs/3D_plot.png)
 
 3D-Plot with sharp-ratio maximum in red
+
+
 
 ### Interactive Dashboard
 We created an interactive dashboard, which allows users to specify their current portfolio mix. Based on their individual portfolio, our algorithm suggests a single trade, which swaps one of the companies for another. By this, we want to give a user the opportunity to incrementally improve their portfolio, and pick the low-hanging fruit first.
